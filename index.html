@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>The Jose Garcia Chronicles</title>
+
+<style>
+
+* { box-sizing: border-box; }
+
+body {
+
+  margin: 0;
+
+  background: #eee;
+
+  color: #181818;
+
+  font-family: Georgia, serif;
+
+}
+
+header {
+
+  background: #111;
+
+  color: white;
+
+  padding: 22px 16px;
+
+  text-align: center;
+
+  border-bottom: 5px solid #c00;
+
+}
+
+header h1 { margin: 0; font-size: clamp(28px,5vw,48px); }
+
+header span { color: #e22; }
+
+nav {
+
+  background: #222;
+
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 20px;
+
+  padding: 15px;
+
+}
+
+nav a { color: white; text-decoration: none; }
+
+nav a:hover { color: #f44; }
+
+main { max-width: 1100px; margin: auto; padding: 20px; }
+
+.breaking {
+
+  background: #b00;
+
+  color: white;
+
+  padding: 12px;
+
+  font-weight: bold;
+
+}
+
+.hero {
+
+  background: white;
+
+  margin-top: 20px;
+
+  padding: 20px;
+
+  border: 1px solid #ccc;
+
+}
+
+.hero img {
+
+  width: 100%;
+
+  max-height: 420px;
+
+  object-fit: cover;
+
+}
+
+h2 { color: #a00; }
+
+.cards {
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+
+  gap: 15px;
+
+}
+
+.card {
+
+  background: white;
+
+  padding: 18px;
+
+  border: 1px solid #ccc;
+
+}
+
+button {
+
+  background: #b00;
+
+  color: white;
+
+  padding: 10px 16px;
+
+  border: 0;
+
+  cursor: pointer;
+
+}
+
+button:hover { background: #700; }
+
+.meter {
+
+  height: 18px;
+
+  background: #ddd;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
+}
+
+.meter div {
+
+  width: 99.9%;
+
+  height: 100%;
+
+  background: #c00;
+
+}
+
+input, textarea {
+
+  width: 100%;
+
+  padding: 12px;
+
+  margin: 8px 0;
+
+}
+
+footer {
+
+  background: #111;
+
+  color: white;
+
+  padding: 25px;
+
+  text-align: center;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+  <h1>The <span>Jose Garcia</span> Chronicles</h1>
+
+  <p>THE OFFICIAL UNOFFICIAL NEWS NETWORK</p>
+
+</header>
+
+<nav>
+
+  <a href="#home">Home</a>
+
+  <a href="#news">News</a>
+
+  <a href="#science">Science</a>
+
+  <a href="#interview">Interview</a>
+
+  <a href="#comments">Comments</a>
+
+</nav>
+
+<main>
+
+  <div class="breaking">
+
+    BREAKING NEWS: Jose Garcia's legendary invention
+
+    continues to make history!
+
+  </div>
+
+  <section class="hero" id="home">
+
+    <h2>TOP STORY</h2>
+
+    <h1>Jose Garcia: The Inventor of Stinky, Gassy,
+
+    Huffy, Mushy Poop</h1>
+
+    <p>A legendary creation that changed the bathroom forever.</p>
+
+    <img src="jose.jpg" alt="Jose Garcia">
+
+    <p>Meet the fictional mastermind behind the
+
+    most ridiculous invention in bathroom history.</p>
+
+    <a href="#news"><button>Read the full investigation</button></a>
+
+  </section>
+
+  <section class="cards" id="news">
+
+    <article class="card">
+
+      <h2>The Full Investigation</h2>
+
+      <p>Discover the legendary origins of the invention.</p>
+
+    </article>
+
+    <article class="card" id="science">
+
+      <h2>The Science Behind the Stink</h2>
+
+      <p>Our completely unofficial scientific investigation.</p>
+
+    </article>
+
+    <article class="card" id="interview">
+
+      <h2>Exclusive Interview</h2>
+
+      <p>Jose Garcia shares his legendary wisdom.</p>
+
+    </article>
+
+  </section>
+
+  <section class="card">
+
+    <h2>STINK LEVEL METER</h2>
+
+    <h1>99.9% - MAXIMUM STINK</h1>
+
+    <div class="meter"><div></div></div>
+
+    <p>Warning: Air fresheners ineffective.</p>
+
+  </section>
+
+  <section class="card" id="comments">
+
+    <h2>Reader Comments</h2>
+
+    <input id="name" placeholder="Your name">
+
+    <textarea id="comment" placeholder="Write a comment"></textarea>
+
+    <button onclick="postComment()">Post Comment</button>
+
+    <div id="posts"></div>
+
+  </section>
+
+</main>
+
+<footer>
+
+  <h2>The Jose Garcia Chronicles</h2>
+
+  <p>All stories are fictional satire.</p>
+
+  <p>Jose Garcia didn't change the world.
+
+  He changed the bathroom forever.</p>
+
+</footer>
+
+<script>
+
+function postComment() {
+
+  const name = document.getElementById('name').value.trim();
+
+  const comment = document.getElementById('comment').value.trim();
+
+  if (!name || !comment) {
+
+    alert('Please enter your name and comment.');
+
+    return;
+
+  }
+
+  const post = document.createElement('p');
+
+  post.textContent = name + ': ' + comment;
+
+  document.getElementById('posts').prepend(post);
+
+  document.getElementById('name').value = '';
+
+  document.getElementById('comment').value = '';
+
+}
+
+</script>
+
+</body>
+
+</html>
